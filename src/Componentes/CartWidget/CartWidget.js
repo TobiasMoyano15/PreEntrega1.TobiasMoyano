@@ -1,4 +1,4 @@
-import Cartwidget from './CartWidget.css'
+import './CartWidget.css'
 import cart from './assets/zapatillas.png'
 import { useContext } from 'react'
 import { CartContext } from '../../Context/CartContext'

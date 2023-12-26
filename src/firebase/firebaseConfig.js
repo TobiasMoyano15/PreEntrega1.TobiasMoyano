@@ -8,8 +8,7 @@ const firebaseConfig = {
   projectId: "ecommerce-coder-e6051",
   storageBucket: "ecommerce-coder-e6051.appspot.com",
   messagingSenderId: "536366826986",
-  appId: "1:536366826986:web:373141b95ec315e39a5e93"
+  appId: "1:536366826986:web:5d2025d1d45664609a5e93"
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app)

@@ -33,7 +33,7 @@ const isInCart = (itemId) => {
 
 return(
     <CartContext.Provider value={{cart,addItem,removeItem,clearCart}}>
-        {ch}
+        {children}
     </CartContext.Provider>
 )
 }

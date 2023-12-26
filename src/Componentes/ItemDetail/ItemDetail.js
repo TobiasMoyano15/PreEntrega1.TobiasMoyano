@@ -1,4 +1,4 @@
-import ItemDetail from "./ItemDetail.css"
+import "./ItemDetail.css"
 import { useState } from "react"
 import ItemCount from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
@@ -44,7 +44,7 @@ const ItemDetail = ({id,nombre,categoria,descripcion,img,precio,stock}) => {
             <footer className="ItemFooter">
                 {
                     quantityAdded > 0 ? (
-                        <link to= '/cart' className='Option'>Terminar Compra</link>
+                        <Link to= '/cart' className='Option'>Terminar Compra</Link>
                     ) : (
                 <ItemCount initial={1} stock={stock} onAdd={handleOnADd}/>
                     )

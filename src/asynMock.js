@@ -14,7 +14,7 @@ const productos = [
     precio : 30000 ,
     categoria : 'zapatillas',
     img : 'https://nikearprod.vtexassets.com/arquivos/ids/628235/DV1622_001_A_PREM.jpg?v=638210578990930000',
-    stock : 25,
+    stock : 15,
     descripcion: 'descripcion de mike airforce'
     },
     {
@@ -23,7 +23,7 @@ const productos = [
     precio : 30000 ,
     categoria : 'zapatillas',
     img : 'https://cdn.shopify.com/s/files/1/2358/2817/files/adidas-campus-00s-dark-green-cloud-white-2.png?v=1682603011',
-    stock : 25,
+    stock : 12,
     descripcion: 'descripcion de adidas campus 2000'
     }
 ]
