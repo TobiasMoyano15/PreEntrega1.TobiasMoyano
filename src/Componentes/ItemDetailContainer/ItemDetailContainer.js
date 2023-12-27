@@ -1,31 +1,36 @@
-import { getProductosByid } from "../../asynMock"
+import './ItemDetailContainer.css'
 import { useState, useEffect } from "react"
-import ItemDetailContainer from "../ItemDetailContainer.css"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { useParams } from "react-router-dom"
+import { getDoc, doc } from 'firebase/firestore'
+import { db } from '../../firebase/firebaseConfig'
 
-export const ItemDetailContainer = () => {
-    const [productos, setProductos] = useState(null)
 
-    const { ItemId } = useParams()
+const ItemDetailContainer = () => {
+    const [productos, setProductos] = useState(null);
+    const [loading, setLoading] = useState(true);
+
+    const { ItemId } = useParams();
 
     useEffect(() => {
-        getProductosByid(ItemId)
+        setLoading(true);
+
+        const docRef = doc(db, 'productos', ItemId);
+
+        getDoc(docRef)
             .then(response => {
-                setProductos(response)
+                const data = response.data();
+                const productosAdapted = { id: response.id, ...data };
             })
             .catch(error => {
-                console.error(error);
+                console.log(error);
             })
+            .finally(() => {
+                setLoading(false);
+            });
+    }, [ItemId]);
 
-    }, [ItemId])
+    // Mueve la exportación al nivel superior del módulo
+};
 
-
-    return (
-        <div className="ItemDetailContainer">
-            <ItemDetail {...productos} />
-        </div>
-    )
-}
-
-export default ItemDetailContainer
+export default ItemDetailContainer;
